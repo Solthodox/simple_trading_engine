@@ -1,4 +1,4 @@
-use trading_engine::{MarketKind, TradingEngine};
+use trading_engine::{MarketKind, OptionSide, OptionsMarket, TradingEngine};
 fn main() {
     let alice = "Alice".to_string();
     let bob = "Bob".to_string();
@@ -7,7 +7,7 @@ fn main() {
 
     let eur_usd = [eur.clone(), usd.clone()];
     let mut engine = TradingEngine::new(MarketKind::OPTIONS);
-    engine.add_pair(&eur_usd, 1);
+    engine.add_pair(&eur_usd, 100);
     engine.add_balance(&alice, &usd, 1_000_000);
     engine.add_balance(&bob, &usd, 1_000_000);
 }
